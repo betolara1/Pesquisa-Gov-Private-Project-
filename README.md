@@ -1,37 +1,47 @@
-👻 Repo Ghost: Pesquisa Gov (Private Project)
-Nota: Este repositório contém a documentação, ativos visuais e especificações técnicas de um projeto privado. O código-fonte original está hospedado em um ambiente restrito por motivos de conformidade e segurança.
+# 📊 Analytics & Audit Dashboard
 
-📋 Visão Geral
-O Pesquisa Gov é um sistema avançado de coleta e análise de dados para gestão pública. Ele foi projetado para permitir que municípios coletem feedbacks de cidadãos de forma georreferenciada e utilizem inteligência artificial para transformar dados brutos em relatórios estratégicos.
+> Uma plataforma de monitoramento corporativo que unifica a avaliação de serviços e a auditoria de segurança de acessos em tempo real.
 
-📸 Interface do Projeto
-(Insira aqui as fotos/mockups que você criou)
+## 📄 Sobre o Projeto
 
-🚀 Tecnologias Principais
-Core: PHP 7.1+ com arquitetura modular para processamento de requisições.
+Este projeto foi desenvolvido para fornecer inteligência de dados (Business Intelligence) e segurança para aplicações. Ele atua em duas frentes principais: captar a avaliação de serviços e manter um log rigoroso de todas as ações realizadas na plataforma.
 
-Database: MySQL para armazenamento estruturado de respostas e perfis demográficos.
+O foco técnico deste desenvolvimento foi criar interfaces de alta performance para a renderização de gráficos complexos e o processamento de grandes volumes de relatórios de usuários, garantindo a rastreabilidade das informações.
 
-AI Integration: Google Gemini API para geração automatizada de relatórios executivos.
+### 🎯 Principais Funcionalidades
 
-Audio Processing: AssemblyAI para transcrição de depoimentos de voz em tempo real.
+* **📈 Painel de Avaliações Dinâmico:** * Renderização de gráficos em tempo real utilizando a biblioteca `Chart.js`.
+    * Separação de dados por tipo de serviço avaliado e formatação automática de eixos em porcentagem (0 a 100%).
+* **🛡️ Sistema de Auditoria (Logs):**
+    * Rastreamento completo de ações operacionais, capturando data/hora, usuário logado, tipo de ação executada e endereço de IP.
+* **⚙️ Interface de Alta Performance:**
+    * Tabela de dados com injeção assíncrona e paginação gerada via JavaScript.
+    * Seletor dinâmico de exibição (10, 20, 50 ou 100 registros por página) para facilitar a leitura de relatórios extensos por parte da administração.
 
-Geospatial: Leaflet.js e Google Maps API para mapeamento de satisfação por coordenadas.
+## 🛠️ Stack Tecnológica
 
-🛠️ Funcionalidades de Destaque
-🧠 IA Strategic Analytics: O sistema processa comentários qualitativos e gera automaticamente conclusões e recomendações baseadas em sentimentos.
+* **Visualização de Dados:** Chart.js para renderização de componentes analíticos visuais.
+* **Manipulação de DOM:** JavaScript Vanilla para controle de paginação e injeção de dados na tabela de auditoria.
+* **Interface & UI:** HTML5 semântico e CSS focado em usabilidade (utilização de FontAwesome para iconografia de rede e calendário).
 
-🎙️ Voice-to-Text Research: Pesquisadores de campo podem gravar áudios que são automaticamente convertidos em texto para inclusão no banco de dados.
+---
 
-📍 Precision Geocoding: Captura automática de coordenadas (Lat/Long) através do endereço ou CEP, permitindo a criação de mapas de calor de problemas urbanos.
+## 📸 Galeria de Telas
 
-📊 Dynamic Reporting: Geração de PDFs profissionais com gráficos gerados dinamicamente via biblioteca TCPDF.
+| Dashboard de Avaliações | Relatórios |
+|:---:|:---:|
+| ![Gráficos](assets/screenshots/dashboard.png) | ![Relatório](assets/screenshots/relatorio.png) |
+| *Visualização de métricas de satisfação dos serviços.* | *Relatório.* |
 
-🏗️ Arquitetura do Sistema
-O projeto é composto por diversos módulos integrados:
+| Mapa Geografico | Formulário |
+|:---:|:---:|
+| ![Mapa](assets/screenshots/mapa.png) | ![Formulário](assets/screenshots/formulario-1.png) |
+| *Mapa geografico com pontos.* | *Formulário de cadastro.* |
 
-cadastro.php: Engine de coleta de dados com suporte a hardware (microfone e GPS).
+| Formulário |
+|:---:|:---:|
+| ![Formulário](assets/screenshots/formulario-2.png) | ![Formulário](assets/screenshots/formulario-3.png) |
+| *Formulário de cadastro.* |
 
-relatorio_resumo_ia.php: Módulo de processamento de linguagem natural (NLP).
-
-mapa.php: Camada de visualização de dados espaciais.
+---
+**Nota:** Este é um repositório de portfólio. O código-fonte principal é de uso restrito por conter lógicas de negócio e regras de segurança proprietárias.
