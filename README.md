@@ -38,10 +38,10 @@ O foco técnico deste desenvolvimento foi criar interfaces de alta performance p
 | ![Mapa](assets/screenshots/mapa.png) | ![Formulário](assets/screenshots/formulario-1.png) |
 | *Mapa geografico com pontos.* | *Formulário de cadastro.* |
 
-| Formulário |
+| Formulário | Formulário |
 |:---:|:---:|
-| ![Formulário](assets/screenshots/formulario-2.png) | ![Formulário](assets/screenshots/formulario-3.png) |
-| *Formulário de cadastro.* |
+| ![Mapa](assets/screenshots/formulario-2.png) | ![Formulário](assets/screenshots/formulario-3.png) |
+| *Formulário de cadastro.* | *Formulário de cadastro.* |
 
 ---
 **Nota:** Este é um repositório de portfólio. O código-fonte principal é de uso restrito por conter lógicas de negócio e regras de segurança proprietárias.
