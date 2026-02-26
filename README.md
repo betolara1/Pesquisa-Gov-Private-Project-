@@ -8,40 +8,87 @@ Este projeto foi desenvolvido para fornecer inteligência de dados (Business Int
 
 O foco técnico deste desenvolvimento foi criar interfaces de alta performance para a renderização de gráficos complexos e o processamento de grandes volumes de relatórios de usuários, garantindo a rastreabilidade das informações.
 
-### 🎯 Principais Funcionalidades
+---
 
-* **📈 Painel de Avaliações Dinâmico:** * Renderização de gráficos em tempo real utilizando a biblioteca `Chart.js`.
-    * Separação de dados por tipo de serviço avaliado e formatação automática de eixos em porcentagem (0 a 100%).
-* **🛡️ Sistema de Auditoria (Logs):**
-    * Rastreamento completo de ações operacionais, capturando data/hora, usuário logado, tipo de ação executada e endereço de IP.
-* **⚙️ Interface de Alta Performance:**
-    * Tabela de dados com injeção assíncrona e paginação gerada via JavaScript.
-    * Seletor dinâmico de exibição (10, 20, 50 ou 100 registros por página) para facilitar a leitura de relatórios extensos por parte da administração.
+## 🏗️ Arquitetura do Sistema
 
-## 🛠️ Stack Tecnológica
+O sistema segue uma arquitetura moderna de microserviços/SPA, separando a camada de apresentação da lógica de negócio.
 
-* **Visualização de Dados:** Chart.js para renderização de componentes analíticos visuais.
-* **Manipulação de DOM:** JavaScript Vanilla para controle de paginação e injeção de dados na tabela de auditoria.
-* **Interface & UI:** HTML5 semântico e CSS focado em usabilidade (utilização de FontAwesome para iconografia de rede e calendário).
+```mermaid
+graph TD
+    Client[Browser / Client] -->|HTTPS| LoadBalancer[Nginx / Reverse Proxy]
+    LoadBalancer -->|API Requests| WebServer[Node.js Express Server]
+    WebServer -->|Auth/Logs| DB[(PostgreSQL / Audit Logs)]
+    WebServer -->|Analytics| AnalyticsEngine[Aggregator Service]
+    Client -->|Static Assets| WebServer
+```
 
 ---
+
+## ⚙️ Como Rodar (Setup)
+
+### 💻 Desenvolvimento Local
+1. Instale as dependências:
+   ```bash
+   npm install
+   ```
+2. Inicie o servidor:
+   ```bash
+   npm start
+   ```
+
+---
+
+## 🔌 Exemplos de API (Request/Response)
+
+### 📈 Analytics Data
+**GET** `/api/analytics`
+- **Response (200 OK):**
+```json
+[
+  { "service": "Serviço A", "satisfaction": 85 },
+  { "service": "Serviço B", "satisfaction": 92 }
+]
+```
+
+### 🛡️ Audit Logs
+**GET** `/api/logs`
+- **Response (200 OK):**
+```json
+[
+  {
+    "id": 1,
+    "timestamp": "2024-03-20T10:00:00Z",
+    "user": "admin",
+    "action": "LOGIN",
+    "ip": "192.168.1.1"
+  }
+]
+```
+
 
 ## 📸 Galeria de Telas
 
 | Dashboard de Avaliações | Relatórios |
 |:---:|:---:|
 | ![Gráficos](assets/screenshots/dashboard.png) | ![Relatório](assets/screenshots/relatorio.png) |
-| *Visualização de métricas de satisfação dos serviços.* | *Relatório.* |
+| *Visualização de métricas de satisfação dos serviços.* | *Relatório operacional.* |
 
-| Mapa Geografico | Formulário |
+| Mapa Geográfico | Formulário de Auditoria |
 |:---:|:---:|
 | ![Mapa](assets/screenshots/mapa.png) | ![Formulário](assets/screenshots/formulario-1.png) |
-| *Mapa geografico com pontos.* | *Formulário de cadastro.* |
-
-| Formulário | Formulário |
-|:---:|:---:|
-| ![Mapa](assets/screenshots/formulario-2.png) | ![Formulário](assets/screenshots/formulario-3.png) |
-| *Formulário de cadastro.* | *Formulário de cadastro.* |
+| *Distribuição geográfica de acessos.* | *Interface de cadastro e auditoria.* |
 
 ---
-**Nota:** Este é um repositório de portfólio. O código-fonte principal é de uso restrito por conter lógicas de negócio e regras de segurança proprietárias.
+
+## 🛠️ Stack Tecnológica
+
+* **Backend:** Node.js, Express (Mock API para portfólio).
+* **Frontend:** JavaScript Vanilla, Chart.js, HTML5/CSS3.
+* **Infra:** Docker, Docker Compose.
+* **CI/CD:** GitHub Actions (Build, Test, Lint).
+* **Testes:** Jest, Supertest.
+
+---
+**Nota:** Este é um repositório de portfólio. O código-fonte original é de uso restrito por conter lógicas de negócio proprietárias. Esta versão demonstra a arquitetura e práticas de engenharia aplicadas.
+
